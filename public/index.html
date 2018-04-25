@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 </head>
 <body>
 <div class="container">
@@ -30,30 +30,49 @@
 </ul>
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="addMovie" role="tabpanel" aria-labelledby="addMovie-tab">
-        <!--<div class="card-body">-->
         <div class="card">
             <div class="card-header text-white bg-dark text-center"><h1>Add Movie</h1></div>
             <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <form>
+                            <div class="form-group">
+                                <label for="input">New Movie</label>
+                                <input type="text" class="form-control" id="input" aria-describedby="input"
+                                       placeholder="Enter New Movie Title">
+                            </div>
+                            <div class="form-group">
+                                <div id="rateYo"></div>
+                                <small>Rate your movie</small>
+                            </div>
 
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="tab-pane fade" id="editMovie" role="tabpanel" aria-labelledby="editMovie-tab">
         <div class="card">
-            <div class="card-header text-white bg-dark text-center">
-                <div class="card-body">
-                    edit
+            <div class="card-header text-white bg-dark text-center"><h1>Edit Movie</h1></div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
     <div class="tab-pane fade" id="deleteMovie" role="tabpanel" aria-labelledby="deleteMovie-tab">
         <div class="card">
-            <div class="card-header text-white bg-dark text-center">
-                <div class="card-body">
-                    delete
-                </div>
+            <div class="card-header text-white bg-dark text-center"><h1>Delete Movie</h1></div>
+            <div class="card-body">
+
             </div>
+
         </div>
     </div>
 </div>
