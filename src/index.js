@@ -6,6 +6,7 @@ require('rateyo/src/jquery.rateyo');
  * es6 modules and imports
  */
 import sayHello from './hello';
+import cardBuilder from './card-builder'
 
 sayHello('World');
 
@@ -17,7 +18,9 @@ const {getMovies} = require('./api.js');
 getMovies().then((movies) => {
     console.log('Here are all the movies:');
     movies.forEach(({title, rating, id}) => {
-        console.log(`id#${id} - ${title} - rating: ${rating}`);
+        //console.log(`id#${id} - ${title} - rating: ${rating}`);
+        const mainContent = cardBuilder(title, rating);
+        $('#main').append(mainContent);
     });
 }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.')
@@ -33,5 +36,16 @@ setTimeout(function () {
 $("#rateYo").rateYo({
     rating: 1,
     starWidth: "20px"
-
 });
+
+$('#addNew').click(function(){
+    console.log('I work!')
+});
+
+
+
+
+
+
+
+
