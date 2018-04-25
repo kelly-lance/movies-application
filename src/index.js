@@ -22,6 +22,13 @@ getMovies().then((movies) => {
         const mainContent = cardBuilder(title, rating);
         $('#main').append(mainContent);
     });
+    $(".rateYo").each(function () {
+        $(this).rateYo({
+            rating: $(this).data('rating'),
+            starWidth: "20px",
+            readOnly: true
+        })
+    });
 }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.')
     console.log(error);
@@ -33,7 +40,7 @@ setTimeout(function () {
 
 //console.log($("#rateYo").rateYo);
 
-$("#rateYo").rateYo({
+$(".rateYo").rateYo({
     rating: 1,
     starWidth: "20px"
 });
