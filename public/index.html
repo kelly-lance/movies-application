@@ -13,6 +13,41 @@
         <h1>Hello There!</h1>
         <p>To get started, edit <code>src/index.js</code>.</p>
     </div>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="addMovie-tab" data-toggle="tab" href="#addMovie" role="tab" aria-controls="addMovie" aria-selected="true">Add New Movie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="editMovie-tab" data-toggle="tab" href="#editMovie" role="tab" aria-controls="editMovie" aria-selected="false">Edit Movie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="deleteMovie-tab" data-toggle="tab" href="#deleteMovie" role="tab" aria-controls="deleteMovie" aria-selected="false">Delete Movie</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="addMovie" role="tabpanel" aria-labelledby="addMovie-tab">
+            <div class="card">
+                <div class="card-body">
+                    add
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="editMovie" role="tabpanel" aria-labelledby="editMovie-tab">
+            <div class="card">
+                <div class="card-body">
+                    edit
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="deleteMovie" role="tabpanel" aria-labelledby="deleteMovie-tab">
+            <div class="card">
+                <div class="card-body">
+                    delete
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="/main.js"></script>
 </body>

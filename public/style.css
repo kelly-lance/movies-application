@@ -1,11 +1,11 @@
 html, body {
     height: 100%;
-    background-color: red;
+
 }
 
 .container {
     position: relative;
-    top: 50%;
+    top: 20%;
     transform: translateY(-100%);
     text-align: center;
 }
