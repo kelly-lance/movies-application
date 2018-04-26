@@ -1,20 +1,22 @@
-import $ from 'jquery';
-window.jQuery = $;
-require('rateyo/src/jquery.rateyo');
 
 /**
  * es6 modules and imports
  */
-import sayHello from './hello';
-import cardBuilder from './card-builder'
 
-sayHello('World');
+import $ from 'jquery';
+window.jQuery = $;
+//--function import for movie cards-->
+import cardBuilder from './card-builder'
 
 /**
  * require style imports
  */
+//<--required plugins and imports-->
+require('rateyo/src/jquery.rateyo');
+require('bootstrap');
 const {getMovies} = require('./api.js');
 
+//<--function to get movies from api-->
 getMovies().then((movies) => {
     console.log('Here are all the movies:');
     movies.forEach(({title, rating, id}) => {
@@ -22,6 +24,7 @@ getMovies().then((movies) => {
         const mainContent = cardBuilder(title, rating);
         $('#main').append(mainContent);
     });
+    //<--star rating on load for cards-->
     $(".rateYo").each(function () {
         $(this).rateYo({
             rating: $(this).data('rating'),
@@ -30,16 +33,11 @@ getMovies().then((movies) => {
         })
     });
 }).catch((error) => {
-    alert('Oh no! Something went wrong.\nCheck the console for details.')
+    alert('Oh no! Something went wrong.\nCheck the console for details.');
     console.log(error);
 });
 
-setTimeout(function () {
-    $('body > div > h1:nth-child(1)').addClass('poof');
-}, 2000);
-
-//console.log($("#rateYo").rateYo);
-
+//<--star rating input-->
 $(".rateYo").rateYo({
     rating: 1,
     starWidth: "20px"
@@ -48,11 +46,9 @@ $(".rateYo").rateYo({
 $('#addNew').click(function(){
     console.log('I work!')
 });
-
-
-
-
-
-
-
-
+//<--modal activation-->
+$('#myModal').modal('show');
+//<--modal hide when movies are loaded-->
+$.when( getMovies() ).done(function() {
+    $('#myModal').modal('hide');
+});
