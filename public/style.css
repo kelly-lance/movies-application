@@ -12,7 +12,7 @@ html, body {
 
 
 /*---------modal background img(tiled)--------*/
-.modal-body{
+#loaderBackground, #editBackground {
     background-image: url("pattern_40.gif");
 }
 /*-------------loader style and animation------------------*/

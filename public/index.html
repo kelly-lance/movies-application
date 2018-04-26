@@ -13,7 +13,7 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-body" id="loaderBackground">
                 <div class="col mt-4">
                 <div class="ball"></div>
                 <div class="ball1"></div>
@@ -23,28 +23,59 @@
         </div>
     </div>
 </div>
+<!---------modal card for edit----------------->
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body" id="editBackground">
+                <div class="tab-pane fade show active" id="addMovie" role="tabpanel" aria-labelledby="addMovie-tab">
+                    <div class="card">
+                        <div class="card-header text-white bg-dark text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" class="text-white">&times;</span>
+                            </button>
+                            <h1>Edit Movie</h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form id-="editModal">
+
+                                            <!--card here-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--------tabs and tab content----------------->
 <div class="container">
 
 </div>
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="addMovie-tab" data-toggle="tab" href="#addMovie" role="tab"
-           aria-controls="addMovie" aria-selected="true">Add New Movie</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="editMovie-tab" data-toggle="tab" href="#editMovie" role="tab" aria-controls="editMovie"
-           aria-selected="false">Edit Movie</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="deleteMovie-tab" data-toggle="tab" href="#deleteMovie" role="tab"
-           aria-controls="deleteMovie" aria-selected="false">Delete Movie</a>
-    </li>
-</ul>
+<!--<ul class="nav nav-tabs" id="myTab" role="tablist">-->
+    <!--<li class="nav-item">-->
+        <!--<a class="nav-link active" id="addMovie-tab" data-toggle="tab" href="#addMovie" role="tab"-->
+           <!--aria-controls="addMovie" aria-selected="true">Add New Movie</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+        <!--<a class="nav-link" id="editMovie-tab" data-toggle="tab" href="#editMovie" role="tab" aria-controls="editMovie"-->
+           <!--aria-selected="false">Edit Movie</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+        <!--<a class="nav-link" id="deleteMovie-tab" data-toggle="tab" href="#deleteMovie" role="tab"-->
+           <!--aria-controls="deleteMovie" aria-selected="false">Delete Movie</a>-->
+    <!--</li>-->
+<!--</ul>-->
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="addMovie" role="tabpanel" aria-labelledby="addMovie-tab">
         <div class="card">
-            <div class="card-header text-white bg-dark text-center"><h1>Add Movie</h1></div>
+            <div class="card-header text-white bg-dark text-center"><h1>The Movies</h1></div>
             <div class="card-body">
                 <div class="row">
                     <div class="col">

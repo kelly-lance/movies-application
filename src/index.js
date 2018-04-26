@@ -9,6 +9,8 @@ window.jQuery = $;
 import cardBuilder from './card-builder'
 import addMovie from './add-movie.js'
 import deleteMovie from './delete-movie.js'
+import editMovie from './edit-movie.js'
+import modalBuilder from './modal-builder.js'
 
 /**
  * require style imports
@@ -88,3 +90,22 @@ $('.row').on('click', '.close', function(event){
 
     });
 
+//---------------functionfor edit card------------------->
+
+$('.row').on('click', '#editMe', function(event) {
+    event.preventDefault();
+    console.log('edit click works');
+    $('#editModal').modal('show');
+    const title =
+    modalBuilder(title, rating, id);
+});
+
+
+
+
+// $('#editButton').click(function (event) {
+//     event.preventDefault();
+//     const title = $('#editInput').val();
+//     const rating = $('#editRating').rateYo('rating');
+//     const id =
+// });
