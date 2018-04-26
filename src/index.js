@@ -8,7 +8,7 @@ window.jQuery = $;
 //--function import for movie cards-->
 import cardBuilder from './card-builder'
 import addMovie from './add-movie.js'
-
+import deleteMovie from './delete-movie.js'
 
 /**
  * require style imports
@@ -24,7 +24,7 @@ getMovies().then((movies) => {
     console.log('Here are all the movies:');
     movies.forEach(({title, rating, id}) => {
         //console.log(`id#${id} - ${title} - rating: ${rating}`);
-        const mainContent = cardBuilder(title, rating);
+        const mainContent = cardBuilder(title, rating, id);
         $('#main').append(mainContent);
     });
     //<--star rating on load for cards-->
@@ -40,12 +40,12 @@ getMovies().then((movies) => {
     console.log(error);
 });
 
-//<--star rating input-->
+//<--star rating user input-->
 $(".rateYo").rateYo({
     rating: 1,
     starWidth: "20px"
 });
-
+//---------Adding new movie with title and star rating on button click--------->
 $('#addNew').click(function(event){
     event.preventDefault();
     console.log('I work!');
@@ -74,4 +74,17 @@ $.when( getMovies() ).done(function() {
     $('#myModal').modal('hide');
 });
 
+
+//--------------click function for delete card---------------->
+
+$('.row').on('click', '.close', function(event){
+    event.preventDefault();
+    console.log('delete works!!');
+    const $target = $(this).parent().parent().parent();
+    $target.hide('slow', function(){ $target.remove(); });
+    const id = event.target.id;
+    console.log(id);
+    deleteMovie(id);
+
+    });
 
