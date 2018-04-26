@@ -7,6 +7,8 @@ import $ from 'jquery';
 window.jQuery = $;
 //--function import for movie cards-->
 import cardBuilder from './card-builder'
+import addMovie from './add-movie.js'
+
 
 /**
  * require style imports
@@ -15,6 +17,7 @@ import cardBuilder from './card-builder'
 require('rateyo/src/jquery.rateyo');
 require('bootstrap');
 const {getMovies} = require('./api.js');
+
 
 //<--function to get movies from api-->
 getMovies().then((movies) => {
@@ -43,12 +46,32 @@ $(".rateYo").rateYo({
     starWidth: "20px"
 });
 
-$('#addNew').click(function(){
-    console.log('I work!')
+$('#addNew').click(function(event){
+    event.preventDefault();
+    console.log('I work!');
+    const title = $('#input').val();
+    const rating = $('#getRating').rateYo('rating');
+    addMovie(title, rating).then (() => {
+       const newCard = cardBuilder(title, rating);
+        $('#main').append(newCard);
+        $(".rateYo").each(function () {
+            $(this).rateYo({
+                rating: $(this).data('rating'),
+                starWidth: "20px",
+                readOnly: true
+            })
+        });
+
+    })
 });
-//<--modal activation-->
+
+
+
+//<--modal activation-->(
 $('#myModal').modal('show');
 //<--modal hide when movies are loaded-->
 $.when( getMovies() ).done(function() {
     $('#myModal').modal('hide');
 });
+
+
