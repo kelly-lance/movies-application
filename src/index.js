@@ -28,7 +28,6 @@ let showAllMovies = (movies) => {
     console.log('Here are all the movies:');
     $('#main').empty();
     movies.forEach(({title, rating, id}) => {
-        //console.log(`id#${id} - ${title} - rating: ${rating}`);
         const mainContent = cardBuilder(title, rating, id);
 
         $('#main').append(mainContent);
@@ -105,14 +104,10 @@ $('.row').on('click', '.editMe', function (event) {
     event.preventDefault();
     console.log('edit click works');
 
-    // use $(this) to get the value from `data-id`
-    // const id = $.....
     const id = $(event.target).data('id');
 
     console.log(id);
 
-    // a new moduel find-movie  ->  findMovieById(id).then(movie => { /* populate the modal and open it here.. */ })
-    // url -> /api/movies/1  -> GET
     findMovieById(id).then(movie => {
 
         console.log(movie);
@@ -131,10 +126,6 @@ $('.row').on('click', '.editMe', function (event) {
             })
         });
     });
-
-
-    // const title =
-    //  modalBuilder(title, rating, id);
 });
 
 
