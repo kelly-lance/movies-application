@@ -3,6 +3,8 @@ html, body {
 
 }
 
+
+
 .container {
     position: relative;
     top: 20%;
@@ -56,7 +58,7 @@ html, body {
 
     100% {
         -moz-transform: rotate(360deg);
-    };
+    }
 }
 
 @-moz-keyframes spinoff {
@@ -66,7 +68,7 @@ html, body {
 
     100% {
         -moz-transform: rotate(-360deg);
-    };
+    }
 }
 
 @-webkit-keyframes spin {
@@ -76,7 +78,7 @@ html, body {
 
     100% {
         -webkit-transform: rotate(360deg);
-    };
+    }
 }
 
 @-webkit-keyframes spinoff {
@@ -86,6 +88,12 @@ html, body {
 
     100% {
         -webkit-transform: rotate(-360deg);
-    };
+    }
 }
 
+
+#head{
+font-family: "industry-inc-bevel",sans-serif;
+font-style: normal;
+font-weight: 400;
+}
